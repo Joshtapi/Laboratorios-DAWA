@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label, select, input, button {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultadoCalculadora {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+        <label for="num1">Número 1:</label>
+        <input type="number" id="num1">
+        <label for="num2">Número 2:</label>
+        <input type="number" id="num2">
+        <label for="operacion">Operación:</label>
+        <select id="operacion">
+            <option value="sumar">Sumar</option>
+            <option value="restar">Restar</option>
+            <option value="multiplicar">Multiplicar</option>
+            <option value="dividir">Dividir</option>
+        </select>
+        <button onclick="calcular()">Calcular</button>
+        <p id="resultadoCalculadora"></p>
+    </div>
+
+    <script>
+        function calcular() {
+            const num1 = document.getElementById('num1').value;
+            const num2 = document.getElementById('num2').value;
+            const operacion = document.getElementById('operacion').value;
+
+            fetch(`/calcular?num1=${num1}&num2=${num2}&operacion=${operacion}`)
+                .then(response => response.text())
+                .then(resultado => {
+                    document.getElementById('resultadoCalculadora').textContent = `Resultado: ${resultado}`;
+                });
+        }
+    </script>
+</body>
+</html>

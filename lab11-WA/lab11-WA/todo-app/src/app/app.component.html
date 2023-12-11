@@ -1,0 +1,29 @@
+<!-- app.component.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Aplicación</title>
+    <link rel="stylesheet" type="text/css" href="app.component.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <div class="app-header">
+            <h1>Tareas</h1>
+            <p>Seleciona tus tareas favoritas</p>
+        </div>
+
+        <!-- Contenido de tu aplicación -->
+        <app-add-task (taskAdded)="addTask($event)"></app-add-task>
+        <app-task-filter (filterSelected)="onFilterSelected($event)"></app-task-filter>
+        <app-task-list [tasks]="tasks" [filteredTasks]="filteredTasks"></app-task-list>
+    </div>
+
+</body>
+
+</html>

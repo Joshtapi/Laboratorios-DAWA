@@ -1,0 +1,19 @@
+/* En task-filter.component.css */
+.task-filter select {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.task-filter select:hover,
+.task-filter select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

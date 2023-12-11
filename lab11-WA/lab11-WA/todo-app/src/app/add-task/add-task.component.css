@@ -1,0 +1,30 @@
+/* En add-task.component.css */
+.add-task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.add-task input {
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex-grow: 1;
+}
+
+.add-task button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-task button:hover {
+  background-color: #0056b3;
+}

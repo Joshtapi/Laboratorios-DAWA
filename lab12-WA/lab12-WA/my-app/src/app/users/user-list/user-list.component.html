@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>User List</title>
+</head>
+
+<body>
+
+  <!-- Tu contenido HTML aquí con las clases CSS -->
+  <h2 class="user-list-title">Lista de usuarios</h2>
+
+  <ul class="user-list">
+    <li *ngFor="let user of users" class="user-item">
+      <span class="user-details">{{ user.id }} - {{ user.name }}                     </span>
+      <button class="details-button" (click)="showDetails(user.id, user.name)">Mostrar detalles</button>
+    </li>
+  </ul>  
+
+  <app-user-details *ngIf="selectedUserId !== undefined" [userId]="selectedUserId"
+    [userName]="selectedUserName"></app-user-details>
+
+</body>
+
+</html>

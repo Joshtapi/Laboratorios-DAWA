@@ -1,0 +1,60 @@
+/* Estilos para la lista de navegación */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #2c3e50; /* Color de fondo más oscuro */
+    border-bottom: 6px solid #3498db; /* Línea separadora más llamativa */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más definida */
+    border-radius: 25px; /* Bordes redondeados más marcados */
+  }
+  
+  li {
+    margin: 0 35px; /* Espaciado aumentado */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ecf0f1; /* Color de texto más claro */
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 18px 35px; /* Aumento del espacio interno */
+    border-radius: 25px; /* Bordes redondeados */
+  }
+  
+  a:hover {
+    color: #3498db; /* Color de texto al pasar el ratón */
+    background-color: #ecf0f1; /* Fondo al pasar el ratón */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  }
+  
+  /* Estilos adicionales */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Color de fondo general más suave */
+  }
+  
+  .container {
+    max-width: 1400px; /* Aumento del ancho del contenedor */
+    margin: 0 auto;
+    padding: 50px; /* Aumento del espacio interno */
+    background-color: #fff; /* Fondo del contenedor */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2); /* Sombra más notoria */
+    border-radius: 30px; /* Bordes redondeados */
+  }
+  
+  .router-link {
+    text-decoration: none;
+    color: #2c3e50; /* Color de enlaces del contenedor */
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .router-link:hover {
+    color: #e74c3c; /* Color al pasar el ratón */
+  }
+  

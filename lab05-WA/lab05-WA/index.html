@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat con Socket.IO ( Joshua Tapia )</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            background-image: url("https://www.wallpaperuse.com/wallp/0-903_m.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="user-info">
+                <div class="avatar">
+                    <img src="https://marketplace.canva.com/EAEj17Y_k_k/2/0/800w/canva-amarillo-y-negro-gamer-desgastado-imagen-de-perfil-de-twitch-cEAj7kp8BUI.jpg"
+                        alt="Avatar">
+                </div>
+                <div class="user-details">
+                    <div class="username">Joshua</div>
+                    <div class="status">En línea</div>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="fas fa-video"></i>
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
+
+
+        <div id="customAlert" class="custom-alert">
+            <div class="custom-alert-content">
+                <span id="customAlertMessage"></span>
+                <button onclick="closeCustomAlert()">OK</button>
+            </div>
+        </div>
+
+
+        <div class="chat-messages" id="chat-messages">
+            <!-- Mensajes se llenarán aquí -->
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="username" placeholder="Tu nombre" onkeyup="checkInputs()">
+            <input type="text" id="message" placeholder="Escribe tu mensaje" onkeyup="checkInputs()">
+            <input type="text" id="imageInput" placeholder="URL de la imagen" onkeyup="checkInputs()">
+            <button onclick="sendMessage()" id="sendButton1" disabled>Enviar (Chat 1)</button>
+        </div>
+
+        <div class="chat-input2">
+            <input type="text" id="username2" placeholder="Tu nombre (Chat 2)" onkeyup="checkInputs()">
+            <input type="text" id="message2" placeholder="Escribe tu mensaje (Chat 2)" onkeyup="checkInputs()">
+            <input type="text" id="imageInput2" placeholder="URL de la imagen" onkeyup="checkInputs()">
+            <button onclick="sendMessage2()" id="sendButton2" disabled>Enviar (Chat 2)</button>
+        </div>        
+
+        <div class="image-preview" id="imagePreview"></div>
+        <div class="image-preview" id="imagePreview2"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

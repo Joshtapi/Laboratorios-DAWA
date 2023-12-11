@@ -1,0 +1,55 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del encabezado */
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 28px;
+  color: #007bff;
+  margin: 0;
+}
+
+.app-header p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Espaciado uniforme para componentes dentro del contenedor principal */
+.app-container > app-add-task,
+.app-container > app-task-filter,
+.app-container > app-task-list {
+  margin-bottom: 20px;
+}
+
+/* Estilo adicional para resaltar la última sección */
+.app-container > app-task-list {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* Estilo para resaltar la sección activa o en foco */
+.app-container > app-add-task:focus,
+.app-container > app-task-filter:focus,
+.app-container > app-task-list:focus {
+  border: 2px solid #007bff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}

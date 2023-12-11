@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi página dinámica con EJS</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a mi Página</h1>
+    <p>¡Hola, <%= nombre %>!</p>
+  </header>
+  <main>
+    <section>
+      <h2>Últimos Posts</h2>
+      <ul>
+        <% posts.forEach(post => { %>
+          <li>
+            <h3><%= post.titulo %></h3>
+            <p><%= post.contenido %></p>
+          </li>
+        <% }); %>
+      </ul>
+    </section>
+    <section>
+      <h2>Información del Usuario</h2>
+      <p>Nombre: <%= nombre %></p>
+      <p>Email: <%= email %></p>
+    </section>
+  </main>
+  <script src="/js/main.js"></script>
+</body>
+</html>

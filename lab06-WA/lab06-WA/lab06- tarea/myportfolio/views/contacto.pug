@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  header
+    h1 Mi Portafolio Personal
+    nav
+      ul
+        li
+          a(href="/") Inicio
+        li
+          a(href="sobre") Sobre Mí
+        li
+          a(href="experiencia") Experiencia Laboral
+        li
+          a(href="educacion") Educación
+        li
+          a(href="habilidades") Habilidades
+        li
+          a(href="proyectos") Proyectos
+        li
+          a(href="contacto") Contáctame
+
+  main
+    section#contacto
+      h2 Contáctame
+      p Si deseas ponerte en contacto conmigo, no dudes en escribirme un mensaje a través del siguiente formulario. ¡Estaré encantado de escucharte!
+      form(action="/enviar-mensaje" method="post")
+        div
+          label(for="nombre") Nombre:
+          input(type="text" id="nombre" name="nombre" required)
+        div
+          label(for="email") Correo Electrónico:
+          input(type="email" id="email" name="email" required)
+        div
+          label(for="mensaje") Mensaje:
+          textarea(id="mensaje" name="mensaje" required)
+        div
+          button(type="submit") Enviar Mensaje

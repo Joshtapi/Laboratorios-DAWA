@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesador de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label, select, input, button {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultadoTexto {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Procesador de Texto</h1>
+        <label for="texto">Texto:</label>
+        <input type="text" id="texto">
+        <label for="accion">Acción:</label>
+        <select id="accion">
+            <option value="dividirPalabras">Dividir Palabras</option>
+            <option value="extraerCadena">Extraer Cadena</option>
+            <option value="eliminarEspacios">Eliminar Espacios</option>
+            <option value="capitalizar">Capitalizar</option>
+            <option value="minusculas">Minúsculas</option>
+            <option value="mayusculas">Mayúsculas</option>
+            <option value="contarCaracteres">Contar Caracteres</option>
+        </select>
+        <button onclick="procesarTexto()">Procesar</button>
+        <p id="resultadoTexto"></p>
+    </div>
+
+    <script>
+        function procesarTexto() {
+            const texto = document.getElementById('texto').value;
+            const accion = document.getElementById('accion').value;
+
+            fetch(`/procesarTexto?texto=${texto}&accion=${accion}`)
+                .then(response => response.text())
+                .then(resultado => {
+                    document.getElementById('resultadoTexto').textContent = `Resultado: ${resultado}`;
+                });
+        }
+    </script>
+</body>
+</html>

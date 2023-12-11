@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Matrícula</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            background-image: url('https://www.todofondos.net/wp-content/uploads/1680x1050-Fondo-de-pantalla-imagen-imagen-imagen.jpg'); /* Reemplaza la URL con tu imagen */
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        h1, h3 {
+            color: #343a40;
+            font-weight: bold;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        .confirmation-details {
+            margin-top: 30px;
+        }
+        .confirmation-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .confirmation-details ul li {
+            margin-bottom: 10px;
+        }
+        .btn-print {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .btn-print:hover {
+            background-color: #0056b3;
+        }
+        .btn-preview {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .btn-preview:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Confirmación de Matrícula</h1>
+        <hr>
+
+        <div class="course-details">
+            <h3>Curso seleccionado:</h3>
+            <p><strong>Curso:</strong> <%= curso %></p>
+        </div>
+
+        <div class="payment-details">
+            <h3>Medio de pago seleccionado:</h3>
+            <p><strong>Medio de Pago:</strong> <%= medioPago %></p>
+        </div>
+
+        <div class="price-details">
+            <h3>Datos de confirmación:</h3>
+            <p>¡Su matrícula ha sido confirmada! Los siguientes son los detalles de su matrícula:</p>
+
+            <ul>
+                <li><strong>Curso:</strong> <%= curso %></li>
+                <li><strong>Medio de Pago:</strong> <%= medioPago %></li>
+                <li><strong>Precio Final: S/</strong> <%= precioFinal %></li>
+            </ul>
+        </div>
+
+        <center><a href="#" class="btn-print mt-4">Imprimir Confirmación</a></center>
+        <center><a href="/" class="btn-print mt-4">Volver al menu principal</a></center>
+    </div>
+</body>
+
+</html>

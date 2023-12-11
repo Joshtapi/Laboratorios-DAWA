@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  main {
+    margin: 20px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  
+  li h3 {
+    margin: 0;
+  }
+  
+  li p {
+    margin: 0;
+  }
+  
+  footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333; /* Cambia el color del texto según tus preferencias */
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+/* styles.css */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  label, input {
+    display: inline-block; /* Cambia a inline-block */
+    margin-bottom: 10px;
+    width: 10%; /* Añade esto para que ocupen todo el ancho del formulario */
+  }
+  
+  input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  

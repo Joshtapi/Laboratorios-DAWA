@@ -1,0 +1,57 @@
+/* Estilos para el contenedor principal */
+.container {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Centrar el contenido */
+}
+
+  
+  /* Estilos para la imagen */
+  .img-profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centrar la imagen */
+}
+  
+  /* Estilos para los títulos */
+  .text-primary {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para los detalles del usuario */
+  .list-group-item {
+    background-color: #fff;
+    border: none;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para el botón de cierre de sesión */
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: block;
+    margin: 20px auto 0; /* Centrar el botón */
+}
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    text-align: center;
+  }
+  

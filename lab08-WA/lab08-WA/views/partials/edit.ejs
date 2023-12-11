@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://e0.pxfuel.com/wallpapers/385/243/desktop-wallpaper-blue-abstract-wave-flow-minimalist-resolution-background-and-minimalist-grey-blue.jpg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor del Formulario */
+        .form-container {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 60px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        /* Título del Formulario */
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Formulario y sus Elementos */
+        form {
+            margin-bottom: 20px;
+        }
+
+        label,
+        input,
+        button {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px auto;
+        }
+
+        input,
+        button {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Botón del Formulario */
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Enlaces */
+        a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #007bff;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Grupos de Elementos en el Formulario */
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            /* Aumentamos el espacio entre los grupos */
+        }
+
+        .form-group label {
+            width: 30%;
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 10px;
+            /* Ajusta el espacio entre el label y el input */
+        }
+
+        .form-group input {
+            width: 70%;
+            font-size: 16px;
+        }
+
+
+        /* Mensajes de Error y Éxito */
+        .error,
+        .success {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Mensajes de Validación */
+        .validation-message {
+            color: red;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .validation-message::before {
+            content: "⚠ ";
+        }
+
+        /* Lista sin Marcadores de Error */
+        ul.sin-marcador {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul.sin-marcador li {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .error-container {
+            background-color: #ffcdd2;
+            /* Cambia el color de fondo según tus preferencias */
+            border: 1px solid #f44336;
+            /* Cambia el color del borde según tus preferencias */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: none;
+            /* Agregamos esta línea para ocultar el contenedor inicialmente */
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Editar Usuario</h1>
+        <form action="/users/update/<%= user._id %>" method="POST">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" value="<%= user.name %>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= user.email %>" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password"
+                    placeholder="Dejar en blanco para mantener la misma contraseña">
+            </div>
+            <div class="error-container">
+                <ul class="sin-marcador">
+                    <% errors.forEach(error=> { %>
+                        <li class="error-message">
+                            <%= error.msg %>
+                        </li>
+                        <% }); %>
+                </ul>
+            </div>
+            <div class="form-group">
+                <button type="submit">Actualizar Usuario</button>
+            </div>
+        </form>
+        <hr>
+        <a href="/users">Regresar a la lista de usuarios</a>
+    </div>
+    <script>
+        // Seleccionamos el contenedor de errores
+        var errorContainer = document.querySelector('.error-container');
+
+        // Verificamos si hay errores al cargar la página
+        if (errorContainer.querySelector('ul').childElementCount > 0) {
+            errorContainer.style.display = 'block'; // Mostramos el contenedor si hay errores
+        }
+    </script>
+</body>
+
+</html>

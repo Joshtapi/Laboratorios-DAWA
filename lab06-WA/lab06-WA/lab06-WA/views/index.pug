@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Mi página dinámica con Pug
+    link(rel="stylesheet", href="/css/styles.css")
+  body
+    header
+      h1 Bienvenido a mi Página
+      p ¡Hola, #{nombre}!
+    main
+      section
+        h2 Últimos Posts
+        ul
+          each post in posts
+            li
+              h3= post.titulo
+              p= post.contenido
+      section
+        h2 Información del Usuario
+        p Nombre: #{nombre}
+        p Email: #{email}
+    script(src="/js/main.js")

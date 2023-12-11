@@ -1,0 +1,51 @@
+.container {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+p {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #555;
+}
+
+h2 {
+  font-size: 2.5em;
+  color: #343a40;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.valor {
+  font-size: 2em;
+  color: #007bff;
+  margin-top: 20px;
+  font-weight: bold; /* Añadido para mayor énfasis */
+}

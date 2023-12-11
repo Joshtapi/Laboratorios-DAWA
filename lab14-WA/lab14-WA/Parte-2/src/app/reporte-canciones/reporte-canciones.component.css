@@ -1,0 +1,173 @@
+/* Estilos para el contenedor principal del componente */
+.reporte-canciones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://images6.alphacoders.com/109/1093971.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Estilos para el encabezado */
+.reporte-canciones-container h1 {
+    color: white;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    font-family: 'Serif', Serif; /* Cambia la fuente a Arial o cualquier otra fuente deseada */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.container {
+    max-width: 1000px; /* Define el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Agrega relleno al contenedor */
+    background-color: rgba(25, 22, 22, 0.9); /* Color de fondo del contenedor */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega sombra al contenedor */
+}
+
+
+
+.filtro-row {
+    display: flex;
+    flex-wrap: wrap; /* Envuelve los elementos si no caben en una línea */
+    gap: 20px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.filtro-row div {
+    margin-bottom: 10px; /* Espacio vertical entre los elementos */
+}
+
+
+/* Estilos compartidos para etiquetas de entrada */
+.reporte-canciones-container label {
+    display: block;
+    margin-top: 15px;
+    color: white; /* Azul real */
+    font-weight: bold;
+    font-family: 'Serif', Serif;
+}
+
+/* Estilos compartidos para campos de entrada de texto y número */
+.reporte-canciones-container input[type="text"],
+.reporte-canciones-container input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid white; /* Azul real */
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Serif', Serif;
+}
+
+/* Estilos para la fila de botones */
+.botones-row {
+    display: flex;
+    justify-content: space-evenly; /* Distribuye uniformemente */
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* Estilos compartidos para botones */
+.reporte-canciones-container button {
+    padding: 14px 28px;
+    border-radius: 6px;
+    margin: 12px;
+    font-weight: bold;
+    transition: transform 0.3s, filter 0.3s;
+    cursor: pointer;
+}
+
+/* Estilos para botones específicos del componente */
+.reporte-canciones-container button.aplicar-filtros {
+    background: #3498DB ; /* Azul real */
+    color: #fff;
+}
+
+.reporte-canciones-container button.restablecer-filtros {
+    background: #3498DB ; /* Verde */
+    color: #fff;
+}
+
+.reporte-canciones-container button.generar-pdf {
+    background: #E74C3C ; /* Naranja */
+    color: #fff;
+}
+
+.reporte-canciones-container button.exportar-csv {
+    background: #27AE60 ; /* Morado */
+    color: #fff;
+}
+
+.reporte-canciones-container button.exportar-json {
+    background: #8E44AD  ; /* Amarillo */
+    color: #fff;
+}
+
+.reporte-canciones-container button.exportar-xml {
+    background: #F39C12  ; /* Rojo claro */
+    color: #fff;
+}
+
+/* Estilos al pasar el mouse sobre los botones */
+.reporte-canciones-container button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Estilos para el mensaje de no resultados */
+.mensaje-no-resultados {
+    display: block;
+    background-color: #f50000; /* Rojo claro */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin: 0; /* Elimina margen superior e inferior */
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+/* Estilos al pasar el mouse sobre el mensaje de no resultados */
+.mensaje-no-resultados:hover {
+    background-color: #e82d2d; /* Rojo más oscuro */
+}
+
+/* Estilos para la caja contenedora de la tabla */
+.tabla-container {
+    background: rgba(255, 255, 255, 0.95); /* Fondo semitransparente */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+    overflow-x: auto; /* Barra horizontal si es necesario */
+    margin-top: 50px;
+}
+
+/* Estilos para la tabla de resultados */
+.tabla-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.tabla-container th, .tabla-container td {
+    border: 1px solid #2ECC71  ; /* Azul real */
+    padding: 14px;
+    text-align: left;
+}
+
+.tabla-container th {
+    background-color: #2ECC71  ; /* Azul real */
+    color: #fff;
+}

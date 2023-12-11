@@ -1,0 +1,21 @@
+/* En task-list.component.css */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  font-size: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.task-list input[type="checkbox"] {
+  margin-right: 12px;
+}
+
+.task-list .completed {
+  text-decoration: line-through;
+  color: #777;
+}

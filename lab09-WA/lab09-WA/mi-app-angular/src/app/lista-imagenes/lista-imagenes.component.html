@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+      <div *ngFor="let pelicula of imagenes" class="col-md-12 mb-4">
+        <div class="card card-horizontal">
+          <img [src]="pelicula.url" class="card-img-top" alt="{{pelicula.titulo}}">
+          <div class="card-body">
+            <h5 class="card-title">{{pelicula.titulo}}</h5>
+            <p class="card-text">{{pelicula.descripcion}}</p>
+            <p class="card-text"><strong>Género:</strong> {{pelicula.genero}}</p>
+            <p class="card-text"><strong>Duración:</strong> {{pelicula.duracion}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

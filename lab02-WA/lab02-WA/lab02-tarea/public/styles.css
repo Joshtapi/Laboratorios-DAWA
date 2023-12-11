@@ -1,0 +1,143 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1f729c;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #65889f;
+}
+
+/* Estilos para la sección de inicio */
+#inicio {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilos para los encabezados */
+h1, h2 {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces */
+a:hover {
+  color: #f1f3f6;
+}
+
+/* Estilos para el botón de contacto */
+.contact-button {
+  background-color: #57595b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #555;
+}
+
+/* Estilos para los párrafos */
+p {
+  margin-bottom: 15px;
+}
+
+/* Estilos para el encabezado de la página */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el encabezado de la sección */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos para el formulario */
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Estilos para las etiquetas del formulario */
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada y área de texto del formulario */
+form input, form textarea {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilos para el botón de envío del formulario */
+form button {
+  background-color: #8d8f90;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #f7fafb;
+}
+.sobre-contenido img {
+  max-width: 500px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+}

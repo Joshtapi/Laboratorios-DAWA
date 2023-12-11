@@ -1,0 +1,62 @@
+/* lista-imagenes.component.css */
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-img-top {
+    max-height: 250px;
+    object-fit: cover;
+  }
+  
+  .card-horizontal {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+  }
+  
+  .card-body {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 100%;
+  }
+  
+  .card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 1em;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 15px; /* Agregué un poco de espacio entre el texto y el borde inferior */
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .row {
+    margin: 0 -15px;
+  }
+  
+  @media (max-width: 767.98px) {
+    .col-md-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  

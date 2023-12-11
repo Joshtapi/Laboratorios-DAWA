@@ -1,0 +1,6 @@
+<!-- En task-list.component.html -->
+<ul class="task-list">
+    <li *ngFor="let task of filteredTasks" [class.completed]="task.completed">
+        <input type="checkbox" [(ngModel)]="task.completed"> {{ task.name }}
+    </li>
+</ul>

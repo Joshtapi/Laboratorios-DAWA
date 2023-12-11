@@ -1,0 +1,25 @@
+<!-- formulario.component.html -->
+<form #formulario="ngForm" id="contact_form" (ngSubmit)="onSubmit(formulario)">
+    <h1>Formulario de Registro</h1>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required placeholder="Escribe tu nombre aquí" style="font-family: 'Goudy Old Style'"/>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder="Ingresa tu correo aquí" style="font-family: 'Goudy Old Style'" />
+
+    <button id="form_button" type="submit" [disabled]="!formulario.valid">Enviar</button>
+</form>
+
+<div id="lista_usuarios">
+    <h2>Lista de usuarios registrados</h2>
+    <ol>
+        <li *ngFor="let usuario of usuariosRegistrados; let i = index " style="font-family: 'Goudy Old Style'">
+            <div>Nombre: {{ usuario.nombre }}</div>
+            <div>Email: {{ usuario.email }}</div>
+        </li>
+    </ol>
+</div>
+
+
+  

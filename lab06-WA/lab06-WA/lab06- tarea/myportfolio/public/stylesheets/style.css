@@ -1,0 +1,310 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.9;
+}
+
+header {
+  background-color: #5b686e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #65889f;
+}
+
+/* Estilos para la sección de inicio */
+#inicio {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+footer a {
+  color: #fff; /* Cambiar el color de los iconos a blanco */
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+/* Estilos para los encabezados */
+h1, h2 {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces */
+a:hover {
+  color: #f1f3f6;
+}
+
+/* Estilos para el botón de contacto */
+.contact-button {
+  background-color: #57595b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #555;
+}
+
+/* Estilos para los párrafos */
+p {
+  margin-bottom: 15px;
+}
+
+/* Estilos para el encabezado de la página */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el encabezado de la sección */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Estilos para el formulario */
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Estilos para las etiquetas del formulario */
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada y área de texto del formulario */
+form input, form textarea {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilos para el botón de envío del formulario */
+form button {
+  background-color: #8d8f90;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #f7fafb;
+}
+.sobre-contenido img {
+  max-width: 500px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+}
+
+
+
+/* Estilos específicos para la página "Sobre Mí" y otras secciones */
+#sobre-mi, 
+#experiencia-laboral, 
+#educacion, 
+#habilidades, 
+#proyectos, 
+#contacto,
+#confirmacion {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px; /* Agregado para separar las secciones */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+/* Estilos para imágenes dentro de la sección "Sobre Mí" */
+.sobre-contenido img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}
+
+/* Estilos para párrafos en diferentes secciones */
+.sobre-contenido p,
+.trabajo p,
+.institucion p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Estilos para secciones "Trabajo" e "Institución" */
+.trabajo,
+.institucion {
+  margin-bottom: 20px;
+}
+
+/* Estilos para encabezados en "Trabajo" e "Institución" */
+.trabajo h3,
+.institucion h3 {
+  margin: 0 0 5px;
+}
+
+/* Estilos específicos para la página "Habilidades" */
+.habilidad {
+  margin-bottom: 20px;
+}
+
+.habilidad h3 {
+  margin: 0 0 5px;
+}
+
+.barra-habilidad {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  height: 20px;
+  position: relative;
+}
+
+.nivel-habilidad {
+  background-color: #007acc;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Estilos específicos para la página "Proyectos" */
+.proyecto {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.proyecto h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.proyecto p {
+  color: #555;
+  font-size: 16px;
+}
+
+.boton-ver-proyecto {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.boton-ver-proyecto:hover {
+  background-color: #555;
+}
+.boton-volver-inicio {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Estilos específicos para la página "Contacto" */
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.formulario-contacto button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.formulario-contacto button:hover {
+  background-color: #555;
+}
+
+.descripcion-proyecto {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

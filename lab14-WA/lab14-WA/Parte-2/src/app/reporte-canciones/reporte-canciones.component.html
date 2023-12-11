@@ -1,0 +1,51 @@
+<div class="reporte-canciones-container">
+    <div class="container">
+        <h1>Informe de Canciones</h1>
+        <div class="filtro-row">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" [(ngModel)]="filtroNombre" />
+            </div>
+    
+            <div>
+                <label for="genero">Género:</label>
+                <input type="text" id="genero" [(ngModel)]="filtroGenero" />
+            </div>
+    
+            <div>
+                <label for="lanzamiento">Año de Lanzamiento:</label>
+                <input type="number" id="lanzamiento" [(ngModel)]="filtroLanzamiento" />
+            </div>
+            <div>
+                <button type="button" class="aplicar-filtros" (click)="aplicarFiltros()">Aplicar Filtros</button>
+                <button type="button" class="restablecer-filtros" (click)="resetearFiltros()">Restablecer Filtros</button>
+            </div>
+            <div class="botones-row">
+                <button type="button" class="generar-pdf" (click)="generarPDF()">Generar PDF</button>
+                <button type="button" class="exportar-csv" (click)="exportarCSV()">Exportar a CSV</button>
+                <button type="button" class="exportar-json" (click)="exportarJSON()">Exportar a JSON</button>
+                <button type="button" class="exportar-xml" (click)="exportarXML()">Exportar a XML</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngIf="!resultadosEncontrados" class="mensaje-no-resultados">
+        No se encontraron resultados.
+    </div>
+
+    <div *ngIf="resultadosEncontrados" class="tabla-container">
+        <table *ngIf="resultadosEncontrados">
+            <tr>
+                <th>Título</th>
+                <th>Género</th>
+                <th>Año de lanzamiento</th>
+            </tr>
+            <tr *ngFor="let canciones of canciones">
+                <td>{{ canciones.titulo }}</td>
+                <td>{{ canciones.genero }}</td>
+                <td>{{ canciones.lanzamiento }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

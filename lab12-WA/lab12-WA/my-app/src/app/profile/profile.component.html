@@ -1,0 +1,46 @@
+<div *ngIf="isLoggedIn">
+    <!-- Nuevo contenido del perfil -->
+    <div class="container mt-4">
+        <div style="text-align: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png"
+                alt="Profile Image" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+            <h2 class="mt-3">Joshua Tapia</h2>
+            <p>Nombre de usuario: {{ username }}</p>
+            <p class="text-muted">Email: joshua.tapiaexample.com</p>
+        </div>        
+        <hr>
+        <h3 class="mb-3">Detalles del Usuario</h3>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Nombre:</strong> Joshua Tapia
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Email:</strong> joshua.tapiaexample.com
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Fecha de Nacimiento:</strong> 01/01/1990
+            </li>
+            <!-- Agrega más detalles aquí -->
+        </ul>
+        <h3 class="mt-4">Historial de Actividad</h3>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Última conexión:</strong> 20/11/2023 14:45
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Actividad Reciente:</strong> Publicaste un comentario en Post #10
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>Logros:</strong> Contribuyente Activo, Usuario Destacado
+            </li>
+        </ul>
+        <div class="text-center">
+        <button class="btn btn-danger mt-4" (click)="logout()">Cerrar sesión</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isLoggedIn">
+    <!-- Contenido para el usuario no autenticado -->
+    <p>Por favor, inicia sesión para ver tu perfil.</p>
+</div>

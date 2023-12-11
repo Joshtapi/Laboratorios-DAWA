@@ -1,0 +1,191 @@
+SOLUCION::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ARCHIVOS EN LA CARPETA RAIZ 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+app.js
+_______________________________________________________________________
+const express = require('express');
+const mysql = require('mysql');
+const app = express();
+
+const db = mysql.createConnection({
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+});
+
+db.connect((err) => {
+    if (err) {
+        console.error('Error de conexión a la base de datos:', err);
+        return;
+    }
+    console.log('Conexión a la base de datos establecida');
+});
+
+app.get('/usuarios', (req, res) => {
+    db.query('SELECT * FROM users', (err, results) => {
+        if (err) {
+            console.error('Error al consultar la base de datos:', err);
+            res.status(500).send('Error interno del servidor');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+app.listen(3000, () => {
+    console.log('Servicio web escuchando en el puerto 3000');
+});
+
+___________________________________________________________________________
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+package.json
+__________________________________________________________________________
+{
+  "name": "servicio-web",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
+___________________________________________________________________________
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+init.sql
+_____________________________________________________________________________
+
+CREATE USER 'qjcoder1'@'%' IDENTIFIED WITH mysql_native_password BY 'qjcoder1';
+GRANT ALL PRIVILEGES ON *.* TO 'qjcoder1'@'%' WITH GRANT OPTION;
+
+
+CREATE DATABASE IF NOT EXISTS examen;
+USE examen;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL
+);
+
+INSERT INTO users (name, email) VALUES
+  ('Usuario 1', 'usuario1@example.com'),
+  ('Usuario 2', 'usuario2@example.com');
+__________________________________________________________________________________
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Dockerfile.
+________________________________________________________________________________
+# Usa la imagen oficial de MySQL
+FROM mysql:latest
+
+# Establece variables de entorno
+ENV MYSQL_ROOT_PASSWORD=mysecretpassword
+ENV MYSQL_DATABASE=qjcoder
+ENV MYSQL_USER=qjcoder
+ENV MYSQL_PASSWORD=qjcoder
+
+# Copia la configuración personalizada de MySQL
+#COPY my.cnf /etc/mysql/conf.d/
+
+# Copia los scripts de inicialización
+COPY init.sql /docker-entrypoint-initdb.d/
+_______________________________________________________________________________
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Dockerfile.web
+_________________________________________________________________________________
+# Usa la imagen oficial de Node.js
+FROM node:14
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia los archivos necesarios
+COPY package.json /app
+COPY app.js /app
+
+# Instala dependencias
+RUN npm install
+
+# Expone el puerto
+EXPOSE 3000
+
+# Comando para iniciar la aplicación
+CMD ["node", "app.js"]
+_________________________________________________________________________________________
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+docker-compose.yml -------------------no se esta usando
+___________________________________________________________________________________
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db-container
+      - MYSQL_USER=qjcoder1
+      - MYSQL_PASSWORD=qjcoder1
+      - MYSQL_DATABASE=examen
+
+  db:
+    build: .
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysecretpassword
+      - MYSQL_DATABASE=examen
+      - MYSQL_USER=qjcoder1
+      - MYSQL_PASSWORD=qjcoder1
+____________________________________________________________________________________
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.env
+___________________________________________________________________________________
+MYSQL_HOST=db-container
+MYSQL_PORT=3306
+MYSQL_USER=qjcoder1
+MYSQL_PASSWORD=qjcoder1
+MYSQL_DATABASE=examen
+______________________________________________________________________________________
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+COMANDOS A EJECUTAR
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-----------------------------CREACION DE IMAGENES-----------------------------------
+_____________________________________________________________________________________
+docker build -t data-base -f Dockerfile.db .
+docker build -t servicio-web -f Dockerfile.web .   
+_________________________________________________________________________________
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+------------------------------CREACION DE RED PARA LA COMUNICACION DE LOS CONTENEDORES----
+_______________________________________________________________________________________
+docker network create network
+___________________________________________________________________________________
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+----------------------------------------INICIAR CONTENEDORES------------------------------
+____________________________________________________________________________________________
+docker run --network network --name db-container -e MYSQL_ROOT_PASSWORD=mysecretpassword -d data-base
+docker run --network network --name web-container -p 3000:3000 --env-file .env -d servicio-web
+POSTGRES_PASSWORD=mysecretpassword
+----------------------------------------------------------------------------------------------------
+
+==========================================FIN======================================================
+
+
+BAJAR UN IMAGEN DE DOCKER UH
+------------------------------
+docker pull fquea/dbapi:1.0
+docker pull fquea/webapi:1.0
+--------------------------
+CREAR ARCHIVO env.txt
+touch env.txt
+cat example.txt >> .env
+-------------------------------
+INICIAR CONTENEDORES
+-------------------------------
+docker run --network network --name db-container -e MYSQL_ROOT_PASSWORD=mysecretpassword -d fquea/dbapi:1.0
+docker run --network network --name web-container -dp 3000:3000 --env-file .env -d fquea/webapi/1.0
+
+
+________________________________________________________________________________________

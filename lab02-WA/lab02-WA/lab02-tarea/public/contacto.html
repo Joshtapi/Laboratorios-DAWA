@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tus estilos CSS aquí -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Enlaza Font Awesome -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .contact-button:hover {
+            background-color: #555;
+        }
+        footer a {
+            color: #fff; /* Cambiar el color de los iconos a blanco */
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ccc; /* Cambiar el color cuando se pasa el ratón sobre los iconos */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio Personal</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="sobre.html">Sobre Mí</a></li>
+                <li><a href="experiencia.html">Experiencia Laboral</a></li>
+                <li><a href="educacion.html">Educación</a></li>
+                <li><a href="habilidades.html">Habilidades</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html">Contáctame</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-form">
+            <center><h2>Contáctame</h2></center>
+            <center><p>¡Déjame un mensaje y me pondré en contacto contigo pronto!</p></center>
+
+            <!-- Formulario de contacto -->
+            <form action="/contact" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                
+                <button class="contact-button" type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+    <br>
+    <footer>
+        <p>Sígueme en:</p>
+        <a href="https://www.facebook.com/profile.php?id=100004627788774" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/EDMMUSI78135350" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/joshua-fernando-tapia-osnayo-b21437274/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/josh_tapia10/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <p>&copy; 2023 Mi Portafolio Personal</p>
+    </footer>
+    
+</body>
+</html>

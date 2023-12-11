@@ -1,0 +1,55 @@
+<div class="app-container">
+  <header>
+    <button (click)="logout()" class="btn-logout">
+      <!-- Imagen para Cerrar Sesión -->
+      <img src="https://cdn-icons-png.flaticon.com/128/660/660350.png" alt="Cerrar Sesión" style="width: 24px; height: 24px;">
+    </button>
+    <h1 (click)="refreshPage()">Music Player</h1>
+    <div class="header-buttons">
+      <button routerLink="/upload" class="btn-upload">
+        <!-- Imagen para Agregar -->
+        <img src="https://cdn-icons-png.flaticon.com/128/4885/4885419.png" alt="Agregar Canción" style="width: 24px; height: 24px;">
+      </button>
+    </div>
+  </header>
+
+  <form (ngSubmit)="searchSongs()" [formGroup]="searchForm" class="form-inline mb-3">
+    <div class="form-group mr-2">
+      <label for="searchQuery" class="sr-only"></label>
+      <input type="text" class="form-control" id="searchQuery" placeholder="Buscar canciones" formControlName="searchQuery">
+    </div>
+    <div class="search-button" (click)="searchSongs()">
+      <img src="https://cdn-icons-png.flaticon.com/128/2618/2618254.png" alt="Buscar" style="width: 24px; height: 24px; cursor: pointer;">
+    </div>
+     </form>
+
+  <ul class="song-list">
+    <li *ngFor="let song of displayedSongs" class="song-item">
+      <div class="song-content">
+        <div class="song-thumbnail">
+          <img [src]="song.logoUrl" alt="Song Thumbnail">
+        </div>
+        <div class="song-details">
+          <div class="song-title">{{ song.title }}</div>
+          <div class="song-artist">{{ song.artist }}</div>
+        </div>
+      </div>
+      <div class="song-buttons">
+        <button (click)="playSong(song._id)" class="btn btn-success btn-play">
+          <img src="https://cdn-icons-png.flaticon.com/128/0/375.png" alt="Reproducir" style="width: 24px; height: 24px;">
+        </button>
+        <button (click)="editSong(song)" class="btn btn-primary btn-edit">
+          <img src="https://cdn-icons-png.flaticon.com/128/1827/1827933.png" alt="Editar" style="width: 24px; height: 24px;">
+        </button>
+        <button (click)="deleteSong(song)" class="btn btn-danger btn-delete">
+          <img src="https://cdn-icons-png.flaticon.com/128/1345/1345874.png" alt="Eliminar" style="width: 24px; height: 24px;">
+        </button>
+      </div>
+    </li>
+  </ul>
+  
+
+  <footer>
+    <p>Spotify - Lab 13 2023®</p>
+  </footer>
+</div>

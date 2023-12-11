@@ -1,0 +1,18 @@
+/* Estilos para la página no encontrada */
+h2 {
+    font-size: 60px;
+    color: #FF0000; /* Rojo intenso */
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  p {
+    font-size: 32px;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
+  }
+  

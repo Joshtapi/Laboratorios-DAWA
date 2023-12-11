@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  header
+    h1 Mi Portafolio Personal
+    nav
+      ul
+        li
+          a(href="/") Inicio
+        li
+          a(href="sobre") Sobre Mí
+        li
+          a(href="experiencia") Experiencia Laboral
+        li
+          a(href="educacion") Educación
+        li
+          a(href="habilidades") Habilidades
+        li
+          a(href="proyectos") Proyectos
+        li
+          a(href="contacto") Contáctame
+
+  main
+    section#habilidades
+      h2 Habilidades
+      .habilidad
+        h3 Programación en JavaScript
+        .barra-habilidad
+          .nivel-habilidad(style="width: 90%;") 90%
+
+      .habilidad
+        h3 Diseño web con HTML y CSS
+        .barra-habilidad
+          .nivel-habilidad(style="width: 85%;") 85%
+
+      .habilidad
+        h3 Python
+        .barra-habilidad
+          .nivel-habilidad(style="width: 80%;") 80%
+
+      .habilidad
+        h3 Gestión de Proyectos
+        .barra-habilidad
+          .nivel-habilidad(style="width: 75%;") 75%
+
+      .habilidad
+        h3 Base de datos SQL
+        .barra-habilidad
+          .nivel-habilidad(style="width: 70%;") 70%
+
+      // Agrega más habilidades si es necesario.

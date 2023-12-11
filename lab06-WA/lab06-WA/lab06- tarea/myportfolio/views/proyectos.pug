@@ -1,0 +1,58 @@
+extends layout
+
+block content
+  header
+    h1 Mi Portafolio Personal
+    nav
+      ul
+        li
+          a(href="/") Inicio
+        li
+          a(href="sobre") Sobre Mí
+        li
+          a(href="experiencia") Experiencia Laboral
+        li
+          a(href="educacion") Educación
+        li
+          a(href="habilidades") Habilidades
+        li
+          a(href="proyectos") Proyectos
+        li
+          a(href="contacto") Contáctame
+
+  main
+    section#proyectos
+      h2 Proyectos
+      .proyecto
+        h3 Sistema de asistencia para una institución privada
+        p Descripción breve del proyecto 1: Este sistema proporciona soluciones eficientes para el control de asistencia en una institución privada. Optimiza el seguimiento y registro de la asistencia de estudiantes y personal, contribuyendo a una gestión más efectiva.
+        a.boton-ver-proyecto(href="#" data-imagen="../images/tecsup.png" data-descripcion="El Sistema de Asistencia para Instituciones Privadas representa una solución innovadora para la gestión de la asistencia en entornos educativos privados. A través de una interfaz intuitiva y herramientas eficaces, este sistema optimiza el seguimiento y registro de la asistencia de estudiantes y personal docente. Además de proporcionar un registro preciso, ofrece funcionalidades adicionales como la generación de informes detallados y la identificación de tendencias de asistencia. Esta herramienta se erige como un pilar fundamental para la gestión efectiva de la institución, contribuyendo significativamente a la mejora del rendimiento académico y el ambiente educativo.") Ver Proyecto
+
+      .proyecto
+        h3 Sistema de ventas
+        p Descripción breve del proyecto 2: Este sistema está diseñado para facilitar y agilizar el proceso de ventas. Ofrece herramientas integrales que permiten la gestión eficaz de transacciones, inventario y seguimiento de clientes.
+        a.boton-ver-proyecto(href="#" data-imagen="../images/mercado.jpg" data-descripcion="El Sistema de Ventas es una solución integral diseñada para potenciar la eficiencia y agilidad en los procesos comerciales. Al ofrecer un conjunto de herramientas robustas, este sistema facilita desde la gestión de transacciones hasta el control de inventario y el seguimiento detallado de clientes. Su interfaz intuitiva y personalizable permite a los usuarios navegar de manera fluida y acceder a la información crítica en tiempo real. Con funcionalidades avanzadas como la generación de informes de ventas y el análisis de tendencias del mercado, este sistema se convierte en una herramienta estratégica para impulsar el crecimiento y la rentabilidad del negocio.") Ver Proyecto
+
+      // Agrega más proyectos si es necesario.
+
+  script.
+    document.querySelectorAll('.boton-ver-proyecto').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const imagen = boton.dataset.imagen;
+        const descripcion = boton.dataset.descripcion;
+
+        const ventanaEmergente = window.open('', 'Proyecto', 'width=600,height=400');
+        ventanaEmergente.document.write(`
+          <html>
+            <head>
+              <title>Proyecto</title>
+            </head>
+            <body>
+              <img src="${imagen}" alt="Imagen del Proyecto">
+              <p>${descripcion}</p>
+              <button onclick="window.close()">Cerrar</button>
+            </body>
+          </html>
+        `);
+      });
+    });
